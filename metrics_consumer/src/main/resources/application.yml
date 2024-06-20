@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: "producer-service"
+  kafka:
+    consumer:
+#     group-id: "order-1"
+#     auto-offset-reset: earliest
+     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+     value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+     properties:
+       spring:
+         json:
+           trusted:
+             packages: '*'
+           value:
+             default:
+               type: ru.shintar.metrics_consumer.model.SomeMetricData
+  datasource:
+     url: jdbc:postgresql://localhost:5432/postgres
+     username: user
+     password: user
+     driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+server:
+  port: 8081
