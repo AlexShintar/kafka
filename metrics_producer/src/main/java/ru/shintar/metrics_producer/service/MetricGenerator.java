@@ -1,14 +1,14 @@
 package ru.shintar.metrics_producer.service;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.actuate.metrics.MetricsEndpoint;
 import org.springframework.stereotype.Service;
 import ru.shintar.metrics_producer.model.SomeMetricData;
 
-import java.util.*;
+import java.util.Optional;
+import java.util.Random;
+import java.util.Set;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class MetricGenerator {
