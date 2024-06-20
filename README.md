@@ -5,7 +5,7 @@
 Система мониторинга, отслеживающая работу различных компонентов приложения с помощью Spring Kafka.
 Система включает в себя Producer для отправки метрик, Consumer для их обработки и анализа, а также REST API для просмотра метрик.
 
-## Требования:
+## Реализация:
 
 ### Producer Service:
 
@@ -26,6 +26,15 @@
 `GET /metrics`: Получение списка всех метрик.<br>
 `GET /metrics/{id}`: Получение конкретной метрики по ее идентификатору.
 
+## Сборка
+ [docker-compose.yml](docker-compose.yml) - подготавливает все сервисы для работы
+ приложения совместно с Zookeeper, Apache Kafka и PostgreSQL
+
+ Сборка и запуск осуществляется командой:
+
+```
+docker compose up --build
+```
 
 ## Стек
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white "Java 17")
@@ -39,6 +48,9 @@
 * Фреймворк: *Spring*
 * База данных: *PostgreSQL*
 * Контроль версий: *Git*
+* Spring Kafka
+* Swagger
+* Docker
 
 ## Взаимодействие с REST-сервисом
 
